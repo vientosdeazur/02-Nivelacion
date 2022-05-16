@@ -6,3 +6,5 @@ const nombrecompleto2 = `${nombre} ${apellido}`; // Usando template string (form
 
 console.log(nombrecompleto);
 console.log(nombrecompleto2);
+
+console.log (nombrecompleto === nombrecompleto2); // El valor es el mismo pero se construyen de diferentes maneras ( una usando la funcionalidad TEMPLATE STRING de JS)
