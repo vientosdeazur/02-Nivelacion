@@ -4,4 +4,4 @@ Parte 2 Curso NODE.JS
 # Funcion Flecha
 # Desestructuracion
 # Callbacks basico
-# Callbacks Hell
+# Callbacks Hell (Irresuelto)
