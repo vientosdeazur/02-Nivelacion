@@ -77,6 +77,7 @@ const getDataEmpleado = async (id) => {
                 nombre: empleado.nombre,
                 sueldo: sueldo.cobra
             };    
+
         } catch (error){
             return {
                 id,
@@ -84,7 +85,9 @@ const getDataEmpleado = async (id) => {
                 sueldo: 0
             }
         }
-            
+        
+        // Se mergearon las dos DB simuladas y se devolvio un objeto para ser manipulado luego
+
     } catch (error) {
         throw error;
     }
