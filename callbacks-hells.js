@@ -52,8 +52,7 @@ const getSueldoByID = (id , callback) => {
 
    let sueldo = sueldos.find( (s) => s.id === id); // Busca en el array por valor ID hasta matchear y devuelve el array al objeto empleado
 
-        //Hasta aca va todo bien ERROR: CALLBACK NO ES UNA FUNCION
-       if (sueldo.cobra){
+       if (sueldo){
             callback (sueldo); // Verifica que haya devuelto un valor distino de undefined    
         } else {
             
@@ -80,7 +79,7 @@ getEmpleadoByID (id, (empleado) => {
         
         console.log (`Empleado ${empleado.nombre} gana un total de: ${sueldo.cobra}`)
 
-        ); // Se rompe aca cuando llama la funcion
+        );
 
    
     }
