@@ -64,7 +64,7 @@ const getSueldoByID = async (id) => {
 }
 
 
-const id = 3;
+const id = 4;
 
 const getDataEmpleado = async (id) => {
 
@@ -72,9 +72,17 @@ const getDataEmpleado = async (id) => {
     const empleado = await getEmpleadoByID(id); // Await tiene que estar si o si dentro de una funcion asincrona
         try { 
             const sueldo = await getSueldoByID (id);
-            return `Empleado ${empleado.nombre} cobra ${sueldo.cobra}` ;    
+            return {
+                id,
+                nombre: empleado.nombre,
+                sueldo: sueldo.cobra
+            };    
         } catch (error){
-            return `Empleado ${empleado.nombre} cobra ` + error.message;
+            return {
+                id,
+                nombre: empleado.nombre,
+                sueldo: 0
+            }
         }
             
     } catch (error) {
@@ -85,5 +93,5 @@ const getDataEmpleado = async (id) => {
 
 
 getDataEmpleado (id)
-    .then (mensaje => console.log (mensaje))
+    .then (datos => console.log (`Empleado ${datos.nombre} cobra ${datos.sueldo}`))
     .catch (err => console.log (err.message));
