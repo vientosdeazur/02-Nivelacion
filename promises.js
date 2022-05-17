@@ -33,71 +33,48 @@ const sueldos = [
     }
 ]
 
-/* const getEmpleadoByID = (id,callback) => {
-
-    let empleado = empleados.find( (e) => e.id === id); // Busca en el array por valor ID hasta matchear y devuelve el array al objeto empleado
-
-    if (empleado){
-        
-        callback (empleado); // Verifica que haya devuelto un valor distino de undefined
-
-    } else {
-
-        empleado = {
-
-            nombre:'Inexistente' // En caso que no se encuentre devuelve Inexistente
-            
-        }
-
-        callback (empleado);
-
-    }
-
-}
-
-FUNCION CON CALLBACK
-
-*/
-
 const getEmpleadoByID = (id) => {
 
     return new Promise ((resolve, reject) => {
 
-
-        let empleado = empleados.find( (e) => e.id === id); // Busca en el array por valor ID hasta matchear y devuelve el array al objeto empleado
+        const empleado = empleados.find( (e) => e.id === id);
 
         if (empleado){
             
             resolve (empleado); // Verifica que haya devuelto un valor distino de undefined
-    
-        } else {
-    
-            reject (
-                empleado = {
-    
-                nombre:'Inexistente' // En caso que no se encuentre devuelve Inexistente
-                
-            }
-            )
-        }
+            return;
+
+        }  reject ('Empleado Inexistente')  
 
     });
 
 }
 
+const getSueldoByID = (id) => {
 
+    return new Promise ((resolve,reject) => {
+        const sueldo = sueldos.find( (s) => s.id === id); 
+        if (sueldo){
+             resolve (sueldo);
+             return;
+            } 
+            reject ('0')
+         }
+    ) 
+}
 
-const id = 4;
+const id = 2;
 
-getEmpleadoByID (id).then(empleado => {
+    getEmpleadoByID (id).then(empleado => {
+        
+        getSueldoByID (id).then (sueldo => {
 
-    console.log (`Empleado ${empleado.nombre}`);
+            console.log (`Empleado ${empleado.nombre} gana un total de ${sueldo.cobra}`) ;
 
-
-    
-}).catch(error => console.log (err));
-
-
-
-
-
+        }).catch (err => console.log (`Empleado ${empleado.nombre} gana un total de `+ err)) ;
+        
+            
+    }).catch (err => console.log (err));
+        
+        
+        
