@@ -4,4 +4,7 @@ Parte 2 Curso NODE.JS
 # Funcion Flecha
 # Desestructuracion
 # Callbacks basico
-# Callbacks Hell (Irresuelto)
+# Callbacks Hell 
+# Promesas
+# Async Await
+
