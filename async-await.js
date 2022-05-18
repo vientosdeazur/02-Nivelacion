@@ -64,7 +64,7 @@ const getSueldoByID = async (id) => {
 }
 
 
-const id = 4;
+const id = 2;
 
 const getDataEmpleado = async (id) => {
 
